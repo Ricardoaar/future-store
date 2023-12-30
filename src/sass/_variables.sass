@@ -1,0 +1,78 @@
+// Color Palette Roles
+$color-primary: #0F2238
+// Primary: For main interactive elements, calls to action (buttons, links)
+$color-secondary: #061327
+// Secondary: For background and layout design, such as headers and footers
+$color-accent: #2B517A
+// Accent: For highlighting important features, icons, or to draw attention
+$color-font-main: #CFCFCF
+// Font Main: Primary text color
+$color-font-secondary: #FFFFFF
+// Font Secondary: For text on top of primary or accent colors
+$color-background: #040B1A
+// Background: Main background of the website
+
+// Gradients
+$gradient-primary:  linear-gradient(90deg, rgba(4,11,26,1) 0%, rgba(9,47,121,1) 35%, rgba(0,13,59,1) 100%)
+// A gradient transitioning from the secondary dark blue to a slightly lighter shade
+$gradient-secondary: linear-gradient(90deg, #102B44 0%, #2B517A 100%)
+// A gradient combining a deep blue with the accent color for a dynamic look
+
+
+// Font Imports
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap')
+
+// Font Variables
+$font-primary: 'Poppins', sans-serif
+// Primary font for body text and paragraphs
+$font-secondary: 'Fredoka One', cursive
+// Secondary font for headings and titles
+$font-accent: 'Bubblegum Sans', cursive
+// Accent font for callouts, special offers, or for children-focused sections
+
+
+// Text Sizes
+$text-xxs: 0.8rem
+$text-xs: 1rem
+$text-sm: 1.2rem
+$text-md: 1.4rem
+$text-lg: 1.6rem
+$text-xl: 1.8rem
+$text-2xl: 2rem
+$text-3xl: 2.2rem
+$text-4xl: 2.4rem
+$text-5xl: 2.6rem
+$text-6xl: 2.8rem
+$text-7xl: 3rem
+$text-8xl: 3.2rem
+
+
+// Breakpoints
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 992px
+$breakpoint-xl: 1200px
+$breakpoint-xxl: 1400px
+
+
+// Media Queries
+@mixin sm
+  @media (min-width: 1px) and (max-width: $breakpoint-sm)
+    @content
+
+@mixin md
+  @media (min-width: $breakpoint-sm + 1px) and (max-width: $breakpoint-md)
+    @content
+
+@mixin lg
+  @media (min-width: $breakpoint-md + 1px) and (max-width: $breakpoint-lg)
+    @content
+
+@mixin xl
+  @media (min-width: $breakpoint-lg + 1px) and (max-width: $breakpoint-xl)
+    @content
+
+@mixin xxl
+  @media (min-width: $breakpoint-xl + 1px) and (max-width: $breakpoint-xxl)
+    @content

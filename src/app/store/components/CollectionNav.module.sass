@@ -1,0 +1,28 @@
+.collection_nav
+  width: 100%
+  display: flex
+  gap: 2rem
+  height: 100%
+
+  padding-top: 1rem
+  padding-bottom: 1rem
+  justify-content: center
+
+  @include sm
+    overflow: scroll
+    justify-content: left
+
+  @include md
+    overflow: scroll
+    justify-content: left
+
+
+.collection_link
+  text-align: center
+  text-wrap: nowrap
+
+
+.selected
+  font-weight: 600
+  color: $color-font-secondary
+  padding-bottom: 0.5rem

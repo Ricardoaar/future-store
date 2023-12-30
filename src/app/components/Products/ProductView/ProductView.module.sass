@@ -1,0 +1,80 @@
+.product__container
+  height: 100%
+  gap: 8rem
+  margin: 10rem auto
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $font-accent
+  border-radius: 0.5rem
+  box-shadow: 0 0 0.5rem 0.25rem $font-accent
+
+
+  .image__container
+    position: relative
+    min-width: 400px
+    min-height: 400px
+    max-width: 50%
+    border-radius: 0.5rem
+    overflow: hidden
+    box-shadow: 0 0 0.5rem 0.25rem $font-accent
+
+
+  .product_info
+    width: 30%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 2rem
+    text-align: center
+
+    & .title
+      font-size: $text-2xl
+      font-weight: 700
+      color: $font-primary
+
+    & .product__tags_container
+      display: flex
+      justify-content: center
+      align-items: center
+      gap: 1rem
+
+      & .product__tags_info
+        font-size: $text-xs
+        font-weight: 700
+        color: $font-primary
+        background-color: $color-secondary
+        padding: 0.5rem 1rem
+        border-radius: 0.5rem
+        box-shadow: 0 0 0.5rem 0.25rem $font-accent
+
+
+    & .description
+      font-size: $text-xs
+      font-weight: 400
+      color: $color-font-main
+      text-align: justify-all
+      padding: 0.5rem 1rem
+      border-radius: 0.5rem
+      box-shadow: 0 0 0.5rem 0.25rem $font-accent
+
+  .add_to_cart_button
+    font-size: $text-xs
+    font-weight: 700
+    color: $color-font-secondary
+    background-color: $color-secondary
+    padding: 0.5rem 1rem
+    border-radius: 0.5rem
+    box-shadow: 0 0 0.5rem 0.25rem $font-accent
+    cursor: pointer
+
+
+    &:hover
+      background: $color-background
+      color: $color-font-main
+
+
+
+      
