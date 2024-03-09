@@ -4,13 +4,25 @@ import { cookies } from "next/headers";
 export const config = {
   matcher: [
     "/login",
-    "/signup/:path*"
+    "/signup/:path*",
+    "/store/:path*",
+    "/"
   ]
 };
 
 export function middleware(req: NextRequest) {
   const token = cookies().get("token");
-  if (cookies().get("token")) {
-    return NextResponse.redirect(new URL("/store", req.url));
+  const requestHeaders = new Headers(req.headers);
+  requestHeaders.set("x-url", req.nextUrl.origin);
+  const init = {
+    headers: requestHeaders
+  };
+
+  if (token) {
+    return NextResponse.redirect(new URL("/store", req.url), {
+      headers: requestHeaders
+    });
   }
+
+  return NextResponse.next({ request: init });
 }

@@ -1,6 +1,7 @@
-import React, { PropsWithChildren, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { Product } from "@/app/components/Products/Products.types";
-import { ENV } from "@/services/shopify/env";
+import { headers } from "next/headers";
+import { BASE_URL_HEADER } from "@/constants/global";
 
 const ProductsRenderer = async ({ productComponent: ProductComponent, products, productWrapper: ProductWrapper }: {
   products?: Product[];
@@ -9,7 +10,9 @@ const ProductsRenderer = async ({ productComponent: ProductComponent, products, 
   productWrapper?: React.FC<{ children?: ReactNode | ReactNode[], product: Product }>
 }) => {
   if (!products) {
-    const response = await fetch(`${ENV.origin}/api`, {
+    const pageHeaders = headers();
+    const baseUrl = pageHeaders.get(BASE_URL_HEADER);
+    const response = await fetch(`${baseUrl}/api`, {
       cache: "force-cache",
       next: {
         tags: ["featured"]

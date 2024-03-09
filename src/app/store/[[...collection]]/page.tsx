@@ -6,7 +6,8 @@ import ProductsRenderer from "@/app/components/Products/ProductsRenderer";
 import ProductCard from "@/app/components/Products/ProductCard/ProductCard";
 import { Product } from "@/app/components/Products/Products.types";
 import Link from "next/link";
-import { ENV } from "@/services/shopify/env";
+import { headers } from "next/headers";
+import { BASE_URL_HEADER } from "@/constants/global";
 
 interface PageProps {
   params: {
@@ -26,7 +27,9 @@ const Wrapper = ({ product, children }: PropsWithChildren<{ product: Product }>)
 const Page: React.FC<PageProps> = async ({ params: { collection = [] } }) => {
   let products;
   if (collection[1]) {
-    const all = await fetch(`${ENV.origin}/api/collections`);
+    const pageHeaders = headers();
+    const baseUrl = pageHeaders.get(BASE_URL_HEADER);
+    const all = await fetch(`${baseUrl}/api/collections`);
     const { collections } = await all.json();
     const id = collections.find((currentCollection: Collection) => currentCollection.handle === collection?.[1])?.id;
     const res = await getCollectionProducts(id);
