@@ -9,7 +9,7 @@ const ProductsRenderer = async ({ productComponent: ProductComponent, products, 
   productWrapper?: React.FC<{ children?: ReactNode | ReactNode[], product: Product }>
 }) => {
   if (!products) {
-    const response = await fetch(`http://${ENV.selfUrl}/api`, {
+    const response = await fetch(`${ENV.origin}/api`, {
       cache: "force-cache",
       next: {
         tags: ["featured"]

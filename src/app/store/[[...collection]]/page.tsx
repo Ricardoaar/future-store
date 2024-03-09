@@ -26,7 +26,7 @@ const Wrapper = ({ product, children }: PropsWithChildren<{ product: Product }>)
 const Page: React.FC<PageProps> = async ({ params: { collection = [] } }) => {
   let products;
   if (collection[1]) {
-    const all = await fetch(`http://${ENV.selfUrl}/api/collections`);
+    const all = await fetch(`${ENV.origin}/api/collections`);
     const { collections } = await all.json();
     const id = collections.find((currentCollection: Collection) => currentCollection.handle === collection?.[1])?.id;
     const res = await getCollectionProducts(id);

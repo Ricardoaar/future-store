@@ -5,7 +5,7 @@ import CollectionNavLink from "@/app/store/components/CollectionNavLink";
 import { ENV } from "@/services/shopify/env";
 
 const CollectionNavigation = async () => {
-  const response = await fetch(`http://${ENV.selfUrl}/api/collections`);
+  const response = await fetch(`${ENV.origin}/api/collections`);
   const { collections }: { collections: Collection[] } = await response.json();
   return (
     <ul className={styles.collection_nav}>

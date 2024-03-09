@@ -4,5 +4,5 @@ export const ENV = {
   cacheToken: process.env.CACHE_TOKEN || null,
   shopifyStorefrontPrivateToken: process.env.SHOPIFY_STOREFRONT_PRIVATE_TOKEN || "",
   shopifyGraphqlEndpoint: process.env.SHOPIFY_GRAPHQL_ENDPOINT || "",
-  selfUrl: process.env.SELF_URL || "localhost:3000"
+  origin: process.env.ORIGIN || "localhost:3000"
 };
